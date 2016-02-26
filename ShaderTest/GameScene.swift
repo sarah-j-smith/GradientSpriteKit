@@ -8,34 +8,52 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+public extension SKColor {
+    
+    func vec4() -> GLKVector4
+    {
+        var r:CGFloat = 0.0
+        var g:CGFloat = 0.0
+        var b:CGFloat = 0.0
+        var a:CGFloat = 0.0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        return GLKVector4(v: (Float(r), Float(g), Float(b), Float(a)))
+    }
+}
+
+class GameScene: SKScene
+{
+
+    override func didMoveToView(view: SKView)
+    {
+        let letterS = childNodeWithName("LetterS") as! SKSpriteNode
         
-        self.addChild(myLabel)
+        let newSprite = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 200, height: 200))
+        newSprite.position = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
+        
+        let shader = SKShader(fileNamed: "Gradient.fsh")
+        
+        let topColor = SKColor.redColor()
+        let bottomColor = SKColor.blueColor()
+        let uniforms = [
+            SKUniform(name: "topColor", floatVector4: topColor.vec4()),
+            SKUniform(name: "bottomColor", floatVector4: bottomColor.vec4())
+        ]
+        shader.uniforms = uniforms
+        
+        addChild(newSprite)
+        
+        newSprite.shader = shader
+        
+        letterS.shader = shader
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
         for touch in touches {
-            let location = touch.locationInNode(self)
+            _ = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
         }
     }
    
