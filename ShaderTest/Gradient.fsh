@@ -9,5 +9,6 @@ void main() {
     //    gl_FragColor = SKDefaultShading();
     
     // Only fill alpha > 0.0 pixels
-    gl_FragColor = SKDefaultShading() * vec4(mix(bottomColor, topColor, v_tex_coord.y));
+    vec4 color = texture2D(u_texture, v_tex_coord);
+    gl_FragColor = color * vec4(mix(bottomColor, topColor, v_tex_coord.y));
 }

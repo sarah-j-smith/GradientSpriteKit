@@ -16,6 +16,7 @@
 		F690DF571C7FC8690080DA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F690DF561C7FC8690080DA87 /* Assets.xcassets */; };
 		F690DF5A1C7FC8690080DA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F690DF581C7FC8690080DA87 /* LaunchScreen.storyboard */; };
 		F690DF6A1C7FCC010080DA87 /* Gradient.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F690DF691C7FCC010080DA87 /* Gradient.fsh */; };
+		F6A7A5681C87CBA9002F0FD6 /* Outline.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F6A7A5671C87CBA9002F0FD6 /* Outline.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F690DF591C7FC8690080DA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F690DF5B1C7FC8690080DA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F690DF691C7FCC010080DA87 /* Gradient.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Gradient.fsh; sourceTree = "<group>"; };
+		F6A7A5671C87CBA9002F0FD6 /* Outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Outline.fsh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				F690DF581C7FC8690080DA87 /* LaunchScreen.storyboard */,
 				F690DF5B1C7FC8690080DA87 /* Info.plist */,
 				F690DF691C7FCC010080DA87 /* Gradient.fsh */,
+				F6A7A5671C87CBA9002F0FD6 /* Outline.fsh */,
 			);
 			path = ShaderTest;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				F635E22F1C7FE44A0076ACD8 /* 83@3x.png in Resources */,
 				F690DF4E1C7FC8690080DA87 /* GameScene.sks in Resources */,
 				F690DF5A1C7FC8690080DA87 /* LaunchScreen.storyboard in Resources */,
+				F6A7A5681C87CBA9002F0FD6 /* Outline.fsh in Resources */,
 				F690DF6A1C7FCC010080DA87 /* Gradient.fsh in Resources */,
 				F690DF571C7FC8690080DA87 /* Assets.xcassets in Resources */,
 				F690DF551C7FC8690080DA87 /* Main.storyboard in Resources */,
